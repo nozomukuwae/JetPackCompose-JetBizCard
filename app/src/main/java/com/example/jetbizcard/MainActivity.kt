@@ -21,6 +21,7 @@ import androidx.compose.material.Card
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -63,6 +64,7 @@ fun CreateBizCard() {
             ) {
                 CreateProfileImage()
                 Divider()
+                CreateInfo()
             }
         }
     }
@@ -84,6 +86,30 @@ private fun CreateProfileImage() {
             contentDescription = "profile image",
             modifier = Modifier.size(135.dp),
             contentScale = ContentScale.Crop
+        )
+    }
+}
+
+@Composable
+private fun CreateInfo() {
+    Column(
+        modifier = Modifier.padding(5.dp),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.Start
+    ) {
+        Text(
+            text = "Miles P.",
+            color = MaterialTheme.colors.primaryVariant,
+            style = MaterialTheme.typography.h4
+        )
+        Text(
+            text = "Android Compose Programmer",
+            modifier = Modifier.padding(3.dp)
+        )
+        Text(
+            text = "@themilesCompose",
+            modifier = Modifier.padding(3.dp),
+            style = MaterialTheme.typography.subtitle1
         )
     }
 }
